@@ -1,37 +1,11 @@
-<div class="content card">
-  <h1>Cadastro de Usuários</h1>
-
-  <input type="text" id="nome" name="nome" [(ngModel)]="novoUsuario.nome" placeholder="Digite o seu nome">
-  <input (keyup.enter)="cadastrar()" type="text" id="email" name="email" [(ngModel)]="novoUsuario.email" placeholder="Digite o seu e-mail">
-
-  <div class="button-container">
-    <button [disabled]="!novoUsuario.nome || !novoUsuario.email"  (click)="cadastrar()">CADASTRAR</button>
-  </div>
-
-  <h3 *ngIf="usuarios.length == 0">Não há usuários cadastrados</h3>
-
-  <div *ngIf="usuarios.length > 0">
-    <h3>Usuários cadastrados</h3>
-
-    <table> 
-      <thead>
-        <tr>
-          <th>Nome</th>
-          <th>E-mail</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let usuario of usuarios">
-          <td>{{usuario.nome}}</td>
-          <td>{{usuario.email}}</td>
-          <td class="remove-parent">
-            <a (click)="remover(usuario)" href="javascript:void(0);">
-              <img src="assets/images/delete.png" alt="">
-            </a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<nav>
+<div class="nav-wrapper">
+    <a href="#" class="brand-logo right"><img src="assets/images/logo.png" alt=""></a>
+    <ul id="nav-mobile" class="left hide-on-med-and-down">
+    <li><a routerLink="usuarios">Usuários</a></li>
+    <li><a routerLink="contatos">Contatos</a></li>
+    </ul>
 </div>
+</nav>
+
+<router-outlet></router-outlet>

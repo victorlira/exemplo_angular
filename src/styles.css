@@ -1,7 +1,124 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700');
 
+html, body {
+    height: 100%;
+}
+
 body {
     font-family: 'Open Sans', sans-serif;
     background: rgba(0,0,0,0.03);
+    zoom: 80%;
+    background-image: url('assets/images/logo-bg.png');
 }
 
+h4 {
+    color: #65B32B;
+}
+
+.form-content {
+    width: 50%;
+    background: white;
+    margin-left: 25%;
+    padding: 20px;
+}
+
+.form-content .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.form-content input {
+    width: -webkit-fill-available;
+    padding: 8px;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.form-content button {
+    background: white;
+    border: 1px solid #65B32B;
+    padding: 15px;
+    color: #65B32B;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.form-content button:hover {
+    background: #65B32B;
+    color: white;
+    cursor: pointer;
+}
+
+.form-content .button-container {
+    width: 100%;
+    text-align: right;
+}
+
+.form-content table {
+    width: 100%;
+}
+
+.form-content td, th {
+    padding: 15px;
+}
+
+.form-content tr:nth-child(even) {
+    background-color: #ddd;
+}
+
+.form-content th {
+    background: #65B32B;
+    color: white;
+    border: 2px solid;
+}
+
+.form-content button:disabled {
+    background: #bbb;
+    color: #555;
+    border: none;
+    cursor: not-allowed;
+}
+
+.form-content a {
+    background: #F7392E;
+    text-align: center;
+    display: -webkit-inline-box;
+    padding: 5px;
+    border-radius: 100px;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+.form-content img {
+    height: 24px;
+}
+
+.remove-parent i {
+    text-align: center;
+    color: white;
+}
+
+.form-content .remove-parent {
+    text-align: center;
+}
+
+.form-content .edit-parent {
+    margin-right: 8px;
+    background-color: #326CA4;
+}
+
+.form-content table input {
+    border: 1px solid;
+    padding-left: 8px;
+    background: white;
+}
+
+.form-content .confirm-parent {
+    margin-right: 8px;
+    background: #2EBE48;
+}
+
+.bread.nav-wrapper {
+    background-color: #579925;
+    padding-left: 20px;
+}

@@ -1,7 +1,34 @@
 img {
     height: 52px;
+    margin-left: 80px;
+    margin-top: 5px;
 }
 
 nav {
-    background: #888;
+    background: #65B32B;
+    z-index: 2;
+    position: relative;
+}
+
+.page-content {
+    display: flex;
+    height: 100%;
+}
+
+.content-panel {
+    width: 100%;
+}
+
+.sidebar-panel {
+    width: 280px;
+    background-color: white;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
+}
+
+.hide-menu {
+    font-size: 36px;
+    position: fixed;
+    left: 15px;
+    color: white;
+    cursor: pointer;
 }

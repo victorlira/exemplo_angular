@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/entidades/usuario';
-import { DBService } from '../servicos/db.service';
+import { UsuariosService } from '../servicos/usuarios.service';
 
 @Component({
   selector: 'app-usuarios',
   templateUrl: './usuarios.component.html',
   styleUrls: ['./usuarios.component.css'],
-  providers: [DBService]
+  providers: [UsuariosService]
 })
 export class UsuariosComponent implements OnInit {
 
@@ -16,7 +16,7 @@ export class UsuariosComponent implements OnInit {
 
   carregando: boolean;
 
-  constructor (private database: DBService) {
+  constructor (private usuarioService: UsuariosService) {
     this.novoUsuario = new Usuario();
 
     this.carregarUsuarios();
@@ -28,30 +28,29 @@ export class UsuariosComponent implements OnInit {
   private carregarUsuarios() {
     this.carregando = true;
 
-    this.database.listar<Usuario>('usuarios')
-    .then(usuariosDB => {
-      this.usuarios = usuariosDB;
+    this.usuarioService.listar()
+      .then(usuariosDB => {
+        this.usuarios = usuariosDB;
 
-      this.carregando = false;
+        this.carregando = false;
     });
   }
 
   cadastrar() {
-    this.database.inserir('usuarios', this.novoUsuario)
+    this.usuarioService.inserir(this.novoUsuario)
       .then(() => {
         alert('Usuário cadastrado com sucesso');
         this.novoUsuario = new Usuario();
         this.carregarUsuarios();
-      });
+    });
   }
 
   remover(uid: string) {
-    this.database.remover('usuarios', uid)
+    this.usuarioService.remover(uid)
       .then(() => {
         alert('usuário removido com sucesso');
-
         this.carregarUsuarios();
-      });
+      }).catch(error => alert(error));
   }
 
   editar(usuario) {
@@ -63,7 +62,7 @@ export class UsuariosComponent implements OnInit {
   }
 
   confirmEdit(usuario) {
-    this.database.atualizar('usuarios', usuario.uid, { nome: usuario.nome, email: usuario.email })
+    this.usuarioService.atualizar(usuario)
       .then(() => {
         alert('usuário atualizado com sucesso');
 

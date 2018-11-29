@@ -1,0 +1,30 @@
+<div>
+  <div class="user-info">
+      <i class="medium material-icons">account_circle</i>
+      <div>
+        <p>Victor Lira</p>
+        <span>vl@cin.ufpe.br</span>
+      </div>
+  </div>
+
+  <div class="separator"></div>
+
+  <div class="menu-list">
+      <div class="menu-item">
+          <i class="small material-icons">home</i>
+        <p *ngIf="isOpen">Início</p>
+      </div>
+      <div [ngClass]="{'menu-item': true, 'active': isPaginaAtual('/usuarios')}" (click)="goTo('usuarios')">
+          <i class="small material-icons">people</i>
+        <p *ngIf="isOpen">Usuários</p>
+      </div>
+      <div [ngClass]="{'menu-item': true, 'active': isPaginaAtual('/contatos')}" (click)="goTo('contatos')">
+          <i class="small material-icons">contacts</i>
+          <p *ngIf="isOpen">Contatos</p>
+      </div>
+  </div>
+
+  <div class="separator"></div>
+
+  <span *ngIf="isOpen">versão: 1.0.0 alfa</span>
+</div>

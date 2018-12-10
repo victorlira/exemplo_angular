@@ -2,14 +2,14 @@
     <div class="nav-wrapper">
         <a href="#" class="brand-logo"><img src="assets/images/logo-white.png" alt=""></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><i (click)="toggleHelpMenu()" class="hide-menu medium material-icons">{{isOpen ? 'arrow_back' : 'menu'}}</i></li>
+            <li><i (click)="toggleMenu()" class="hide-menu medium material-icons">{{isOpen ? 'arrow_back' : 'menu'}}</i></li>
             <li><a href="javascript:void(0);">Sair</a></li>
         </ul>
     </div>
 </nav>
 
 <div class="page-content">
-    <div class="sidebar-panel" [@slideInOut]="helpMenuOpen">
+    <div [ngClass]="{'sidebar-panel': true, 'sidebar-big': isOpen, 'sidebar-small': !isOpen}">
         <app-menu-lateral [isOpen]="isOpen"></app-menu-lateral>
     </div>
     <div class="content-panel">

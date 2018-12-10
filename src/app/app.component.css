@@ -25,6 +25,16 @@ nav {
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2), 0 4px 20px 0 rgba(0,0,0,0.19);
 }
 
+.sidebar-small {
+    width: 80px;
+    transition: width 0.7s;
+}
+
+.sidebar-big {
+    width: 280px;
+    transition: width 0.7s,
+}
+
 .hide-menu {
     font-size: 36px;
     position: fixed;
